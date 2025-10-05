@@ -22,7 +22,9 @@ The application is structured into a two-stage pipeline, leveraging the strength
 During development, we faced a critical decision regarding the choice of the primary text generation model.
 
 - **The Initial Hurdle (Open-Source Models):**  
-  We initially experimented with several highly-rated open-source Large Language Models (LLMs) served via common inference platforms. Specifically, models such as Qwen/Qwen3-0.6B were tested. The main challenge was their lack of steerability. While these open-source models performed well on general instruction tasks, they consistently failed to produce text that fully committed to the extreme emotional states (highly optimistic or deeply pessimistic) required by the project's goal. Their default behavior often gravitated toward a neutral or overly "safe" tone, undermining the core function of the application.
+  We initially experimented with several highly-rated open-source Large Language Models (LLMs) served via common inference platforms. Specifically, models such as Qwen/Qwen3-0.6B were tested. The main challenge was poor contextual relevance.
+
+  While these open-source models successfully adopted the requested tone (e.g., pessimism), the resulting text was often not relevant to the user's specific input prompt. They struggled to maintain focus on the core topic, leading to generic or off-topic output that failed to meet the functional requirements of the application.
 
 - **The Final Decision (GPT-4o mini):**  
   To ensure consistent, high-quality, and reliable adherence to the nuanced sentiment instructions, we transitioned to the OpenAI GPT-4o mini model. This proprietary model demonstrates superior capability in honoring complex stylistic and behavioral instructions set via the system prompt, guaranteeing that the generated text truly aligns with the required emotional state. This decision prioritizes functional quality and reliability over the use of a completely open-source solution for the generation step.
